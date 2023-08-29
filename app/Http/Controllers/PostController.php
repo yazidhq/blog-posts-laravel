@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\PostModel;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -13,17 +13,18 @@ class PostController extends Controller
     {
         $data = [
             'title' => 'Posts',
-            'posts' => PostModel::all(),
+            'posts' => Post::all(),
         ];
         return view('posts', $data);
     }
 
     // single post page
-    public function show($slug)
+    public function show(Post $post)
     {
         $data = [
             'title' => 'Single Post',
-            'post' => PostModel::find($slug),
+            'post' => $post,
+            'category' => $post->category,
         ];
         return view('post', $data);
     }
