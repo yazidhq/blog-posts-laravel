@@ -10,7 +10,7 @@
         {{ $category->name }}
         </div>
         <div class="card-body">
-        <a href="/categories/{{ $category->slug }}" class="btn btn-danger">Detail Post</a>
+        <a href="/categories/{{ $category->slug }}" class="btn btn-danger">See Posts</a>
         </div>
     </div>
 @endforeach
