@@ -2,7 +2,7 @@
 
 @section('container')
 
-<h1>Halaman Posts</h1>
+<h1>{{ $title }}</h1>
 
 @foreach ($posts as $post)    
     <div class="card mt-3">
@@ -20,24 +20,3 @@
 @endforeach
 
 @endsection
-
-{{-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, sequi illo tempora, at blanditiis dolor quasi aperiam illum labore corporis ipsam eligendi aliquam minima aliquid! Hic cum a accusantium dolor.</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit minima est natus dolorem. Voluptas sequi nobis et accusantium aut? A odit voluptates aspernatur nostrum dolorum illo est alias nihil sed?</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit minima est natus dolorem. Voluptas sequi nobis et accusantium aut? A odit voluptates aspernatur nostrum dolorum illo est alias nihil sed?</p> --}}
-
-{{-- create --}}
-{{-- Post::create([
-    'title' => 'Judul Ketiga',
-    'category_id' => 3,
-    'slug' => 'judul-ketiga',
-    'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, sequi illo tempora, at blanditiis dolor',
-    'body' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, sequi illo tempora, at blanditiis dolor quasi aperiam illum labore corporis ipsam eligendi aliquam minima aliquid! Hic cum a accusantium dolor.</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit minima est natus dolorem. Voluptas sequi nobis et accusantium aut? A odit voluptates aspernatur nostrum dolorum illo est alias nihil sed?</p><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit minima est natus dolorem. Voluptas sequi nobis et accusantium aut? A odit voluptates aspernatur nostrum dolorum illo est alias nihil sed?</p>'
-]) --}}
-
-{{-- update --}}
-{{-- Post::find(3)->update(['title' => 'Judul Ke Tiga Berubah'])
-Post::where('title', 'Judul Ke Lima')->update(['title' => 'Judul Ke Lima Berubah']) --}}
-
-{{-- create --}}
-{{-- Category::create([
-    'name' => 'Web Design',
-    'slug' => 'web-design',
-]) --}}

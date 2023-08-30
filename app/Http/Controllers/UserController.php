@@ -12,9 +12,9 @@ class UserController extends Controller
     public function index(User $user)
     {
         $data = [
-            'title' => $user->name . "'s Post",
+            'title' => "Post By Author: $user->name",
             'posts' => $user->posts,
         ];
-        return view('user_posts', $data);
+        return view('posts', $data);
     }
 }

@@ -22,10 +22,9 @@ class CategoryController extends Controller
     public function category(Category $category)
     {
         $data = [
-            'title' => $category->name,
+            'title' => "Post By Category: $category->name",
             'posts' => $category->posts,
-            'category' => $category
         ];
-        return view('category', $data);
+        return view('posts', $data);
     }
 }
