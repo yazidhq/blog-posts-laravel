@@ -25,6 +25,7 @@ class PostController extends Controller
             'title' => 'Single Post',
             'post' => $post,
             'category' => $post->category,
+            'user' => $post->user,
         ];
         return view('post', $data);
     }

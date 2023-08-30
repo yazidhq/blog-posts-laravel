@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
-use App\Models\Category;
+use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,3 +45,6 @@ Route::get('/categories', [CategoryController::class, 'index']);
 
 // category
 Route::get('/categories/{category:slug}', [CategoryController::class, 'category']);
+
+// all posts by user
+Route::get('/user/{user:id}', [UserController::class, 'index']);
