@@ -47,4 +47,4 @@ Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{category:slug}', [CategoryController::class, 'category']);
 
 // all posts by user
-Route::get('/user/{user:id}', [UserController::class, 'index']);
+Route::get('/user/{user:username}', [UserController::class, 'index']);
