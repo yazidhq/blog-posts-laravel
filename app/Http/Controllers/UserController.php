@@ -13,7 +13,8 @@ class UserController extends Controller
     {
         $data = [
             'title' => "Post By Author: $user->name",
-            'posts' => $user->posts,
+            // load for solve n+1 problem
+            'posts' => $user->posts->load('category', 'user'),
         ];
         return view('posts', $data);
     }

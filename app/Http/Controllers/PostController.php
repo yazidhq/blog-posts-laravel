@@ -14,6 +14,7 @@ class PostController extends Controller
         $data = [
             'title' => 'All Posts',
             // 'posts' => Post::all(),
+            // 'with' for solve n+1 problem
             'posts' => Post::latest()->get(),
         ];
         return view('posts', $data);
@@ -25,8 +26,6 @@ class PostController extends Controller
         $data = [
             'title' => 'Single Post',
             'post' => $post,
-            'category' => $post->category,
-            'user' => $post->user,
         ];
         return view('post', $data);
     }

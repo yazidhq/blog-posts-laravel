@@ -13,6 +13,8 @@ class Post extends Model
     // protected $fillable = ['title', 'excerpt', 'body'];
     // and this method notfillable, rest is fillable
     protected $guarded = ['id'];
+    // 'with' for solve n+1 problem
+    protected $with = ['category', 'user'];
 
     // relation with category
     public function category()

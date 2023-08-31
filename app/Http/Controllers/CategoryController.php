@@ -23,7 +23,7 @@ class CategoryController extends Controller
     {
         $data = [
             'title' => "Post By Category: $category->name",
-            'posts' => $category->posts,
+            'posts' => $category->posts->load('category', 'user'),
         ];
         return view('posts', $data);
     }

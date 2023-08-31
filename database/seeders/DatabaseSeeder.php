@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
 
         Post::factory(20)->create();
 
+        Category::factory(3)->create();
+
         // MANUAL SEED USER
         // User::create([
         //     'name' => 'Yazid Dhiaulhaq Ismail',
@@ -35,14 +37,14 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // MANUAL SEED CATEGORY
-        Category::create([
-            'name' => 'Web Programming',
-            'slug' => 'web-programming',
-        ]);
-        Category::create([
-            'name' => 'Web Design',
-            'slug' => 'web-design',
-        ]);
+        // Category::create([
+        //     'name' => 'Web Programming',
+        //     'slug' => 'web-programming',
+        // ]);
+        // Category::create([
+        //     'name' => 'Web Design',
+        //     'slug' => 'web-design',
+        // ]);
 
         // MANUAL SEED POST
         // Post::create([
