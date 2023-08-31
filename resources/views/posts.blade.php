@@ -31,6 +31,7 @@
         <div class="card" style="width: 18rem;">
 
             <a href="/categories/{{ $post->category->slug }}">
+                
                 <div class="position-absolute px-3 py-2 mt-3 text-white" style="background-color: rgba(0, 0, 0, 0.7)">
                 {{ $post->category->name }}
                 </div>
