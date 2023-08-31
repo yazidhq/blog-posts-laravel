@@ -28,7 +28,7 @@
 <div class="row">
     @foreach ($posts->skip(1) as $post)   
     <div class="col-md-4 mb-3">
-        <div class="card" style="width: 18rem;">
+        <div class="card">
 
             <a href="/categories/{{ $post->category->slug }}">
                 
