@@ -5,10 +5,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
+
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link {{ $title === "Home" ? 'active' : '' }}" href="/">Home</a>
-        </li>
+          </li>
           <li class="nav-item">
             <a class="nav-link {{ $title === "About" ? 'active' : '' }}" href="/about">About</a>
           </li>
@@ -19,6 +20,13 @@
             <a class="nav-link {{ $title === "Categories" ? 'active' : '' }}" href="/categories">Category</a>
           </li>
         </ul>
+          
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="/login" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+          </li>
+        </ul>
+
       </div>
     </div>
 </nav>

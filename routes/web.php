@@ -3,6 +3,8 @@
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -55,3 +57,9 @@ Route::get('/categories', function () {
 // Route::get('/categories/{category:slug}', [CategoryController::class, 'category']);
 // // all posts by user
 // Route::get('/user/{user:username}', [UserController::class, 'index']);
+
+
+// Login routes
+Route::get('/login', [LoginController::class, 'index']);
+// Register routes
+Route::get('/register', [RegisterController::class, 'index']);
