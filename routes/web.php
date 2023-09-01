@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,10 +42,16 @@ Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 // all categories
-Route::get('/categories', [CategoryController::class, 'index']);
+// Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/categories', function () {
+    return view('categories', [
+        'title' => 'Categories',
+        'categories' => Category::all()
+    ]);
+});
 
-// category
-Route::get('/categories/{category:slug}', [CategoryController::class, 'category']);
-
-// all posts by user
-Route::get('/user/{user:username}', [UserController::class, 'index']);
+// tidak digunakan lagi karna kategori dan user join table dengan post dan diambil dari url(get)
+// // category
+// Route::get('/categories/{category:slug}', [CategoryController::class, 'category']);
+// // all posts by user
+// Route::get('/user/{user:username}', [UserController::class, 'index']);
