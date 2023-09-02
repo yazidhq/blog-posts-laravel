@@ -60,7 +60,7 @@ Route::get('/categories', function () {
 // // all posts by user
 // Route::get('/user/{user:username}', [UserController::class, 'index']);
 
-// Login routes with Middleware and Logout
+// Login routes with Middleware and Logout (using name for route name, check Middleware/Authenticate.php for name)
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);

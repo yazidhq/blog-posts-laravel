@@ -18,6 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     // public const HOME = '/home';
+    // redirect to base url when already login and access login view
     public const HOME = '/';
 
     /**

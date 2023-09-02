@@ -15,6 +15,7 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (!$request->expectsJson()) {
+            // when unlogin but access dashboard from url and this route named with login 
             return route('login');
         }
     }
