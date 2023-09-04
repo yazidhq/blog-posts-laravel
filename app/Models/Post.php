@@ -67,4 +67,10 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // create default otomatis route with slug
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
