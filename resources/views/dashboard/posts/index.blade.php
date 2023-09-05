@@ -26,7 +26,11 @@
             <td>
                 <a href="/dashboard/posts/{{ $post->slug }}" class="badge btn-info"><span data-feather="eye"></span></a>
                 <a href="/dashboard/posts/{{ $post->slug }}" class="badge btn-warning"><span data-feather="edit"></span></a>
-                <a href="/dashboard/posts/{{ $post->slug }}" class="badge btn-danger"><span data-feather="trash-2"></span></a>
+                <form action="/dashboard/posts/{{ $post->slug }}" method="POST" style="display: inline;">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn badge btn-danger"><span data-feather="trash-2"></span></button>
+                </form>
             </td>
           </tr>
         @endforeach

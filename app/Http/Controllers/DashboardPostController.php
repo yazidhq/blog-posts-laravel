@@ -98,8 +98,10 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->back()->with('success', 'Post deleted successfully');
     }
+
 
     // send url for get slug request from input title
     public function checkSlug(Request $request)
