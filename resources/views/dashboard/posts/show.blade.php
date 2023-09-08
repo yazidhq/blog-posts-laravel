@@ -17,7 +17,11 @@
                 </form>
             </div>
 
-            <img src="https://source.unsplash.com/500x400/?{{ $post->title }}" class="card-img-top img-fluid mb-3" alt="...">
+            @if ($post->image)
+                <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top img-fluid mb-3" alt="...">
+            @else
+                <img src="https://source.unsplash.com/500x400/?{{ $post->title }}" class="card-img-top img-fluid mb-3" alt="...">
+            @endif
 
             <div style="text-align: justify;">
                 {!! $post->body !!}

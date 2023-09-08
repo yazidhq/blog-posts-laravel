@@ -12,13 +12,18 @@
                 in <a href="/posts?category={{ $post->category->slug }}"  class="text-decoration-none">{{ $post->category->name }}</a>
             </p>
 
-            <img src="https://source.unsplash.com/500x400/?{{ $post->title }}" class="card-img-top img-fluid mb-3" alt="...">
+            @if ($post->image)
+                <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top img-fluid mb-3" alt="...">
+            @else
+                <img src="https://source.unsplash.com/500x400/?{{ $post->title }}" class="card-img-top img-fluid mb-3" alt="...">
+            @endif
 
             <div style="text-align: justify;">
                 {!! $post->body !!}
             </div>
 
-            <a href="/posts" class="text-decoration-none">Back to post</a>
+            <a href="/posts" class="text-decoration-none mt-3 mb-3 btn btn-danger btn-sm">Back to post</a>
+            
         </div>
     </div>
 </div>
