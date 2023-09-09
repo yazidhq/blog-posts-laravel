@@ -7,6 +7,7 @@ use App\Models\Category;
 use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 
@@ -116,14 +117,25 @@ class DashboardPostController extends Controller
         $rules = [
             'title' => ['required', 'max:255'],
             'category_id' => ['required'],
+            'image' => ['image', 'file', 'max:3000'],
             'body' => ['required']
         ];
+
         // request for new data and post for old data
         if ($request->slug != $post->slug) {
             $rules['slug'] = ['required', 'unique:posts'];
         }
+
         // validate
         $validatedData = $request->validate($rules);
+
+        // check if new image is exist
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
 
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 150);
@@ -144,6 +156,9 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         // $post->delete();
+        if ($post->image) {
+            Storage::delete($post->image);
+        }
         Post::destroy($post->id);
         return redirect('/dashboard/posts')->with('success', 'Post deleted successfully');
     }
